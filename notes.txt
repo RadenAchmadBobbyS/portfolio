@@ -1,0 +1,10 @@
+npm install shadcn-ui
+npx shadcn@latest init
+
+npx shadcn@latest add button
+npx shadcn@latest add input
+npx shadcn@latest add textarea
+npx shadcn@latest add avatar
+npx shadcn@latest add dropdown-menu
+
+npm install --save-dev webpack webpack-cli
