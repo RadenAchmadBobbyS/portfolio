@@ -3,17 +3,6 @@
 import { useEffect, useRef } from "react"
 import styles from "./night-background.module.css"
 
-interface Meteor {
-  x: number
-  y: number
-  size: number
-  speed: number
-  tail: number
-  opacity: number
-  active: boolean
-  timeToLive: number
-}
-
 interface Planet {
   x: number
   y: number
@@ -65,7 +54,7 @@ export default function SpaceBackground() {
         color: "#a67c52",
         rings: true,
         angle: 0,
-        speed: 0.0002,
+        speed: 0.0101,
       },
       {
         x: canvas.width * 0.2,
@@ -87,25 +76,6 @@ export default function SpaceBackground() {
       },
     ]
 
-    // Meteors
-    const meteors: Meteor[] = []
-    const maxMeteors = 10
-
-    const createMeteor = () => {
-      if (meteors.length < maxMeteors && Math.random() < 0.002) {
-        meteors.push({
-          x: Math.random() * canvas.width,
-          y: 0,
-          size: Math.random() * 3 + 1,
-          speed: Math.random() * 1.5 + 0.5,
-          tail: Math.random() * 70 + 70,
-          opacity: Math.random() * 0.8 + 0.2,
-          active: true,
-          timeToLive: Math.random() * 1000 + 500,
-        })
-      }
-    }
-
     // Animation
     let animationFrameId: number
 
@@ -115,8 +85,6 @@ export default function SpaceBackground() {
 
       // Background gradient
       const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height)
-      gradient.addColorStop(0, "#0a0a1a")
-      gradient.addColorStop(1, "#1a1a2e")
       ctx.fillStyle = gradient
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
@@ -161,50 +129,6 @@ export default function SpaceBackground() {
         planet.x -= planet.speed * 10
         if (planet.x + planet.radius < 0) {
           planet.x = canvas.width + planet.radius
-        }
-      })
-
-      // Handle meteors
-      createMeteor()
-      meteors.forEach((meteor) => {
-        if (meteor.active) {
-          const angle = Math.PI / 4
-          const tailX = meteor.x - Math.cos(angle) * meteor.tail
-          const tailY = meteor.y - Math.sin(angle) * meteor.tail
-
-          const gradient = ctx.createLinearGradient(meteor.x, meteor.y, tailX, tailY)
-          gradient.addColorStop(0, `rgba(255, 255, 255, ${meteor.opacity})`)
-          gradient.addColorStop(0.3, `rgba(255, 200, 150, ${meteor.opacity * 0.6})`)
-          gradient.addColorStop(1, `rgba(255, 100, 0, 0)`)
-
-          ctx.beginPath()
-          ctx.moveTo(meteor.x, meteor.y)
-          ctx.lineTo(tailX, tailY)
-          ctx.strokeStyle = gradient
-          ctx.lineWidth = meteor.size
-          ctx.lineCap = "round"
-          ctx.stroke()
-
-          ctx.save()
-          ctx.shadowColor = `rgba(255, 255, 255, ${meteor.opacity})`
-          ctx.shadowBlur = 20
-          ctx.beginPath()
-          ctx.arc(meteor.x, meteor.y, meteor.size * 0.7, 0, Math.PI * 2)
-          ctx.fillStyle = `rgba(255, 255, 255, ${meteor.opacity})`
-          ctx.fill()
-          ctx.restore()
-
-          meteor.x += meteor.speed
-          meteor.y += meteor.speed
-          meteor.timeToLive--
-
-          if (meteor.x > canvas.width || meteor.y > canvas.height || meteor.timeToLive <= 0) {
-            meteor.x = Math.random() * canvas.width
-            meteor.y = 0
-            meteor.speed = Math.random() * 1.5 + 0.5
-            meteor.tail = Math.random() * 100 + 70
-            meteor.timeToLive = Math.random() * 1000 + 500
-          }
         }
       })
 

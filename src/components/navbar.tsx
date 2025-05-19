@@ -57,12 +57,6 @@ export default function Navbar() {
       <div className="container mx-auto px-4 py-4 relative">
         <nav className="flex items-center justify-between">
           <Link href="/" className="group flex items-center space-x-2">
-            <div className="relative w-8 h-8">
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-800 via-blue-700  to-indigo-500 rounded-full opacity-75 group-hover:opacity-100 blur-[2px] group-hover:blur-[3px] transition-all duration-300"></div>
-              <div className="absolute inset-[2px] bg-black rounded-full flex items-center justify-center">
-                <Star className="w-4 h-4 text-white" />
-              </div>
-            </div>
             <span className="text-2xl font-bold tracking-tight">
               <span className="bg-gradient-to-r from-indigo-400 via-blue-400 to-indigo-400 text-transparent bg-clip-text">
                 Raden

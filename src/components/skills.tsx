@@ -216,7 +216,7 @@ export default function Skills() {
   }, [isDragging, offsetX, currentIndex])
 
   return (
-    <section className="py-20 flex items-center justify-center min-h-[50vh]">
+    <section id="skills" className="py-20 flex items-center justify-center min-h-[50vh]">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 inline-block bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">
@@ -224,7 +224,7 @@ export default function Skills() {
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto"></div>
           <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
-            The technologies, tools, and languages I use to bring ideas to life
+            The technologies, tools, and languages I use
           </p>
         </div>
 

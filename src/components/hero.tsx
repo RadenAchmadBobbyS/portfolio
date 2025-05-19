@@ -2,8 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import { motion } from "framer-motion"
-import { ArrowDown, Code, Send, Star } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Star } from "lucide-react"
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -72,13 +71,6 @@ export default function Hero() {
     }
   }, [])
 
-  const scrollToNext = () => {
-    const nextSection = document.getElementById("about")
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: "smooth" })
-    }
-  }
-
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Canvas background for stars */}
@@ -124,18 +116,16 @@ export default function Hero() {
             <h2 className="relative text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-blue-400 to-indigo-600 bg-clip-text text-transparent leading-tight">
               Raden Achmad Bobby
               <br className="hidden sm:block" />
-              <span className="font-extrabold">I&apos;m fullstack developer</span>
             </h2>
           </motion.div>
 
           <motion.p
-            className="max-w-[600px] text-gray-300 md:text-xl leading-relaxed mt-6 mx-auto"
+            className="max-w-[600px] text-gray-300 md:text-xl leading-relaxed mt-6 mx-auto text-nowrap"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            I build modern web applications with cutting-edge technologies. Let&apos;s create something amazing
-            together.
+            Let&apos;s create something amazing together.
           </motion.p>
 
           <motion.div
@@ -144,46 +134,12 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mt-10"
           >
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white border-0 relative group overflow-hidden"
-              onClick={() => {
-                const projectsSection = document.getElementById("projects")
-                if (projectsSection) {
-                  projectsSection.scrollIntoView({ behavior: "smooth" })
-                }
-              }}
-            >
-              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-indigo-600 to-blue-600 group-hover:opacity-0 transition-opacity duration-300"></span>
-              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              <span className="relative flex items-center gap-2">
-                <Code size={18} />
-                View My Work
-              </span>
-            </Button>
 
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => {
-                const contactSection = document.getElementById("contact")
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: "smooth" })
-                }
-              }}
-              className="border-indigo-500/30 text-indigo-400 hover:text-white hover:bg-indigo-500/10 hover:border-indigo-500/50 relative group"
-            >
-              <span className="relative flex items-center gap-2">
-                <Send size={18} />
-                Contact Me
-              </span>
-              <span className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-            </Button>
           </motion.div>
 
           {/* Tech stack indicators */}
           <motion.div
-            className="flex flex-wrap justify-center gap-4 mt-12"
+            className="flex flex-wrap justify-center gap-4 mt-1"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.9 }}
@@ -198,28 +154,6 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
-
-      <motion.div
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20"
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 1,
-          delay: 1.2,
-          repeat: Number.POSITIVE_INFINITY,
-          repeatType: "reverse",
-        }}
-      >
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={scrollToNext}
-          className="rounded-full border border-indigo-500/20 bg-black/30 backdrop-blur-sm hover:bg-indigo-500/10 text-indigo-400"
-        >
-          <ArrowDown className="h-5 w-5" />
-          <span className="sr-only">Scroll down</span>
-        </Button>
-      </motion.div>
 
       {/* Decorative corner elements */}
       <div className="absolute top-10 left-10 w-32 h-32 border-l-2 border-t-2 border-indigo-500/20 z-10 pointer-events-none"></div>
