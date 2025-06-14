@@ -1,29 +1,56 @@
-import Navbar from "@/components/navbar"
-import Hero from "@/components/hero"
-import About from "@/components/about"
-import Skills from "@/components/skills"
-import Projects from "@/components/projects"
-import Contact from "@/components/contact"
-import Footer from "@/components/footer"
-import SpaceBackground from "@/components/space-background"
-import Experience from "@/components/experience"
+"use client"
 
-export default function Home() {
+import { useEffect } from "react"
+import Sidebar from "@/components/Sidebar"
+import HeroSection from "@/components/HeroSection"
+import AboutSection from "@/components/AboutSection"
+import TechStackSection from "@/components/TechStackSection"
+import ExperienceSection from "@/components/ExperienceSection"
+import ProjectsSection from "@/components/ProjectsSection"
+import ContactSection from "@/components/ContactSection"
+import ThemeProvider from "@/components/ThemeProvider"
+import Footer from "@/components/Footer"
+
+export default function Portfolio() {
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.documentElement.style.scrollBehavior = "smooth"
+    }
+  }, [])
+
   return (
-    <div className="relative min-h-screen overflow-hidden bg-black text-white">
-      <SpaceBackground />
-      <div className="relative z-10">
-        <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <Skills />
-          <Experience />
-          <Projects />
-          <Contact />
+    <ThemeProvider>
+      <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 relative overflow-x-hidden transition-colors duration-500">
+        <Sidebar />
+
+        <main className="ml-0 md:ml-20 transition-all duration-300">
+          <section id="hero">
+            <HeroSection />
+          </section>
+
+          <section id="about">
+            <AboutSection />
+          </section>
+
+          <section id="tech">
+            <TechStackSection />
+          </section>
+
+          <section id="experience">
+            <ExperienceSection />
+          </section>
+
+          <section id="projects">
+            <ProjectsSection />
+          </section>
+
+          <section id="contact">
+            <ContactSection />
+          </section>
+
+          <Footer />
         </main>
-        <Footer />
       </div>
-    </div>
+    </ThemeProvider>
   )
 }
