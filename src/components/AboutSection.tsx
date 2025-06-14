@@ -95,13 +95,13 @@ export default function AboutSection() {
             >
               <div className="prose prose-lg text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
                 <p>
-                  I'm Bobby Syakir, a Full Stack Web Developer with a strong background in JavaScript technologies such as React, Next.js, Node.js, and Express. I enjoy turning ideas into responsive and scalable web applications. My experience also includes working with PostgreSQL and MongoDB for robust data management. I strive to write clean, efficient, and maintainable code.
+                  I&apos;m Bobby Syakir, a Full Stack Web Developer with a strong background in JavaScript technologies such as React, Next.js, Node.js, and Express. I enjoy turning ideas into responsive and scalable web applications. My experience also includes working with PostgreSQL and MongoDB for robust data management. I strive to write clean, efficient, and maintainable code.
                 </p>
                 <p>
-                  Over the past few years, I've built various projects — from real-time quiz games and e-commerce platforms to productivity tools and community-based apps. I love combining frontend and backend logic to create seamless user experiences. Problem-solving and innovation are at the heart of my workflow. I'm always exploring new tools and best practices to improve my craft.
+                  Over the past few years, I&apos;ve built various projects — from real-time quiz games and e-commerce platforms to productivity tools and community-based apps. I love combining frontend and backend logic to create seamless user experiences. Problem-solving and innovation are at the heart of my workflow. I&apos;m always exploring new tools and best practices to improve my craft.
                 </p>
                 <p>
-                  Outside of coding, I enjoy learning about UI/UX design, experimenting with AI tools, and working on creative tech ideas. I believe great products come from empathy, collaboration, and continuous learning. I'm open to freelance opportunities, team collaborations, or full-time roles. Let's connect and build something impactful together.
+                  Outside of coding, I enjoy learning about UI/UX design, experimenting with AI tools, and working on creative tech ideas. I believe great products come from empathy, collaboration, and continuous learning. I&apos;m open to freelance opportunities, team collaborations, or full-time roles. Let&apos;s connect and build something impactful together.
                 </p>
               </div>
             </motion.div>

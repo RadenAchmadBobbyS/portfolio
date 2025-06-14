@@ -92,9 +92,9 @@ export default function ContactSection() {
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-6xl font-bold text-gray-800 dark:text-gray-100 mb-4">Let's Connect</h2>
+            <h2 className="text-4xl lg:text-6xl font-bold text-gray-800 dark:text-gray-100 mb-4">Let&apos;s Connect</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Ready to bring your ideas to life? Let's start a conversation
+              Ready to bring your ideas to life? Let&apos;s start a conversation
             </p>
           </motion.div>
 
@@ -108,7 +108,7 @@ export default function ContactSection() {
             >
               <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">Get In Touch</h3>
 
-              {socialLinks.map((social, index) => (
+              {socialLinks.map((social) => (
                 <motion.a
                   key={social.name}
                   href={social.url}
@@ -222,7 +222,7 @@ export default function ContactSection() {
                   <Mail size={48} className="text-white" />
                 </motion.div>
                 <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4">Ready to collaborate?</h3>
-                <p className="text-gray-600 dark:text-gray-400">Let's create something amazing together</p>
+                <p className="text-gray-600 dark:text-gray-400">Let&apos;s create something amazing together</p>
               </div>
             </motion.div>
           </div>

@@ -172,7 +172,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
             >
-              Hi, I'm
+              Hi, I&apos;m
               <motion.span
                 className="gradient-text block sm:inline text-nowrap"
                 animate={{
