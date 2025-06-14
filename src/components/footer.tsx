@@ -75,13 +75,13 @@ export default function Footer() {
               <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Let's Connect</h4>
               <div className="space-y-2">
                 <motion.p className="text-gray-600 dark:text-gray-400" whileHover={{ scale: 1.05 }}>
-                  hello@johndoe.dev
+                  bobbysyakir18@gmail.com
                 </motion.p>
                 <motion.p className="text-gray-600 dark:text-gray-400" whileHover={{ scale: 1.05 }}>
-                  San Francisco, CA
+                  Bekasi Selatan, Indonesia
                 </motion.p>
                 <motion.p className="text-gray-600 dark:text-gray-400" whileHover={{ scale: 1.05 }}>
-                  +1 (555) 123-4567
+                  +62 (896) 717-96434
                 </motion.p>
               </div>
             </motion.div>
@@ -148,7 +148,7 @@ export default function Footer() {
               transition={{ delay: 1.2 }}
               viewport={{ once: true }}
             >
-              © {currentYear} John Doe. All rights reserved.
+              © {currentYear} Raden Achmad Bobby Syakir. All rights reserved.
             </motion.p>
           </div>
         </motion.div>

@@ -51,7 +51,7 @@ const projects = [
     color: "#3b82f6",
     description: "Full-stack e-commerce solution with React, Node.js, and PostgreSQL",
     tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
-    github: "#",
+    github: "https://github.com/H8-FSJS-P3S6/p3-gc02-RadenAchmadBobbyS",
     live: "#",
     gallery: [
       "/hermes-6.png?height=400&width=600",
@@ -75,7 +75,7 @@ const projects = [
     color: "#8b5cf6",
     description: "An e-commerce application for selling various types of books, integrated with 3rd-party APIs, Gemini AI, and Midtrans payment gateway.",
     tech: ["React", "Gemini AI", "PostgreSQL", "Tailwind", "Midtrans"],
-    github: "#",
+    github: "https://github.com/RadenAchmadBobbyS/MyBooks",
     live: "#",
     gallery: [
       "/Mybooks-project-2.png?height=400&width=600",
@@ -98,7 +98,7 @@ const projects = [
     color: "#ef4444",
     description: "A real-time multiplayer quiz platform where a host can create quizzes, and players join using a room code.",
     tech: ["React", "Gemini AI", "Socket.io", "Node.js"],
-    github: "#",
+    github: "https://github.com/rmt-59-gp",
     live: "#",
     gallery: [
       "/quizez-1.png?height=400&width=600",
@@ -121,7 +121,7 @@ const projects = [
     color: "#10b981",
     description: "BeliBesar is a B2B commerce app designed for large-scale business transactions and wholesale operations.",
     tech: ["Next.js", "MongoDB", "Node.js", "Cloudinary", "Midtrans"],
-    github: "#",
+    github: "https://github.com/belibesar",
     live: "#",
     gallery: [
       "/1.png?height=400&width=600",
@@ -145,7 +145,7 @@ const projects = [
     color: "#f59e0b",
     description: "Urbanize is a civic-tech web platform that empowers communities to report",
     tech: ["Next.js", "MongoDB", "Socket.io", "React"],
-    github: "#",
+    github: "https://github.com/RadenAchmadBobbyS/UrbanizeReports",
     live: "#",
     gallery: [
       "/urban-1.png?height=400&width=600",

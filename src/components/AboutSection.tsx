@@ -114,9 +114,9 @@ export default function AboutSection() {
               viewport={{ once: true }}
             >
               {[
-                { number: "5+", label: "Years Experience", color: "#3b82f6" },
-                { number: "50+", label: "Projects Completed", color: "#8b5cf6" },
-                { number: "20+", label: "Happy Clients", color: "#ef4444" },
+                { number: "1+", label: "Years Experience", color: "#3b82f6" },
+                { number: "10+", label: "Projects Completed", color: "#8b5cf6" },
+                { number: "10+", label: "Happy Clients", color: "#ef4444" },
                 { number: "100%", label: "Satisfaction Rate", color: "#10b981" },
               ].map((stat, index) => (
                 <motion.div

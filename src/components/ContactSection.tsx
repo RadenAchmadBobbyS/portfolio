@@ -44,21 +44,21 @@ const socialLinks = [
   {
     name: "LinkedIn",
     icon: Linkedin,
-    url: "https://linkedin.com",
+    url: "https://linkedin.com/in/bobby-syakir-80a957150/",
     color: "#0077B5",
     description: "Connect professionally",
   },
   {
     name: "GitHub",
     icon: Github,
-    url: "https://github.com",
+    url: "https://github.com/RadenAchmadBobbyS",
     color: "#333333",
     description: "View my code",
   },
   {
     name: "Email",
     icon: Mail,
-    url: "mailto:hello@example.com",
+    url: "mailto:bobbysyakir18@gmail.com",
     color: "#EA4335",
     description: "Send me a message",
   },
@@ -183,7 +183,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800 dark:text-gray-200">Location</h4>
-                    <p className="text-gray-600 dark:text-gray-400">San Francisco, CA</p>
+                    <p className="text-gray-600 dark:text-gray-400">Bekasi Selatan, Indonesia</p>
                   </div>
                 </div>
 
@@ -193,7 +193,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800 dark:text-gray-200">Phone</h4>
-                    <p className="text-gray-600 dark:text-gray-400">+1 (555) 123-4567</p>
+                    <p className="text-gray-600 dark:text-gray-400">+62 (896) 717-96434</p>
                   </div>
                 </div>
               </motion.div>

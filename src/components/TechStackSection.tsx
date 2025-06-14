@@ -126,7 +126,7 @@ export default function TechStackSection() {
           {/* Enhanced Bento Grid with Thicker Colorful Glowing Borders */}
           <div
             ref={gridRef}
-            className="relative grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 border-4 border-gray-500 dark:border-gray-400 overflow-hidden bg-gray-50 dark:bg-gray-800/50 backdrop-blur-sm"
+            className="relative grid grid-cols-2 rounded-md md:grid-cols-3 lg:grid-cols-4 dark:border-gray-400 overflow-hidden bg-gray-50 dark:bg-gray-800/50 backdrop-blur-sm"
             style={{
               background: `radial-gradient(circle 250px at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.2), transparent)`,
             }}

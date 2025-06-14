@@ -5,23 +5,96 @@ import { Canvas } from "@react-three/fiber"
 import { Float, Sphere, MeshDistortMaterial, OrbitControls, Stars } from "@react-three/drei"
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, Star, Users, Code } from "lucide-react"
 
-function AnimatedSphere({ position, color }: { position: [number, number, number]; color: string }) {
+function DetailedSphere({
+  position,
+  color,
+  size = 1,
+}: { position: [number, number, number]; color: string; size?: number }) {
   return (
-    <Float speed={2} rotationIntensity={2} floatIntensity={3}>
-      <Sphere args={[1, 64, 64]} position={position}>
-        <MeshDistortMaterial
-          color={color}
-          attach="material"
-          distort={0.6}
-          speed={3}
-          roughness={0}
-          metalness={0.20}
-          emissive={color}
-          emissiveIntensity={0.3}
-        />
-      </Sphere>
+    <Float speed={1.2} rotationIntensity={1.5} floatIntensity={1.8}>
+      <group position={position}>
+        {/* Main detailed sphere with crystal-like appearance */}
+        <Sphere args={[size, 128, 128]}>
+          <MeshDistortMaterial
+            color={color}
+            attach="material"
+            distort={0.25}
+            speed={1.2}
+            roughness={0.02}
+            metalness={0.95}
+            emissive={color}
+            emissiveIntensity={0.5}
+            transparent
+            opacity={0.98}
+            clearcoat={1}
+            clearcoatRoughness={0.1}
+          />
+        </Sphere>
+        {/* Inner plasma core */}
+        <Sphere args={[size * 0.65, 64, 64]}>
+          <MeshDistortMaterial
+            color={color}
+            attach="material"
+            distort={0.4}
+            speed={2}
+            roughness={0}
+            metalness={1}
+            emissive={color}
+            emissiveIntensity={0.8}
+            transparent
+            opacity={0.75}
+          />
+        </Sphere>
+        {/* Energy field wireframe */}
+        <Sphere args={[size * 1.25, 32, 32]}>
+          <MeshDistortMaterial
+            color={color}
+            attach="material"
+            distort={0.6}
+            speed={2.8}
+            roughness={0.8}
+            metalness={0.2}
+            emissive={color}
+            emissiveIntensity={0.4}
+            transparent
+            opacity={0.35}
+            wireframe
+          />
+        </Sphere>
+        {/* Inner crystalline structure */}
+        <Sphere args={[size * 0.45, 32, 32]}>
+          <MeshDistortMaterial
+            color={color}
+            attach="material"
+            distort={0.7}
+            speed={3.5}
+            roughness={0.1}
+            metalness={0.9}
+            emissive={color}
+            emissiveIntensity={0.9}
+            transparent
+            opacity={0.6}
+          />
+        </Sphere>
+        {/* Outer aura */}
+        <Sphere args={[size * 1.4, 16, 16]}>
+          <MeshDistortMaterial
+            color={color}
+            attach="material"
+            distort={0.8}
+            speed={4}
+            roughness={1}
+            metalness={0}
+            emissive={color}
+            emissiveIntensity={0.3}
+            transparent
+            opacity={0.2}
+            wireframe
+          />
+        </Sphere>
+      </group>
     </Float>
   )
 }
@@ -29,18 +102,26 @@ function AnimatedSphere({ position, color }: { position: [number, number, number
 function Background3D() {
   return (
     <>
-      <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
-      <ambientLight intensity={0.4} />
-      <pointLight position={[10, 10, 10]} intensity={1} color="#3b82f6" />
-      <pointLight position={[-10, -10, -10]} intensity={0.5} color="#8b5cf6" />
-      <pointLight position={[0, 10, -10]} intensity={0.3} color="#ef4444" />
+      <Stars radius={150} depth={80} count={4000} factor={4} saturation={0} fade speed={0.2} />
+      <ambientLight intensity={0.6} />
+      <pointLight position={[15, 15, 15]} intensity={2.5} color="#3b82f6" />
+      <pointLight position={[-15, -15, -15]} intensity={2} color="#8b5cf6" />
+      <pointLight position={[0, 15, -15]} intensity={1.5} color="#10b981" />
+      <pointLight position={[10, -10, 10]} intensity={1.2} color="#f59e0b" />
 
-      <AnimatedSphere position={[-4, 2, -2]} color="#3b82f6" />
-      <AnimatedSphere position={[4, -2, -3]} color="#8b5cf6" />
-      <AnimatedSphere position={[0, 3, -4]} color="#ef4444" />
-      <AnimatedSphere position={[-2, -3, -2]} color="#f59e0b" />
+      {/* 3 ENHANCED BEAUTIFUL SPHERES */}
+      <DetailedSphere position={[-4, 2, -3]} color="#3b82f6" size={0.8} />
+      <DetailedSphere position={[3, -2, -4]} color="#8b5cf6" size={0.7} />
+      <DetailedSphere position={[0, 3, -5]} color="#10b981" size={0.6} />
 
-      <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.3} />
+      <OrbitControls
+        enableZoom={false}
+        enablePan={false}
+        autoRotate
+        autoRotateSpeed={0.4}
+        maxPolarAngle={Math.PI / 1.8}
+        minPolarAngle={Math.PI / 3}
+      />
     </>
   )
 }
@@ -67,9 +148,9 @@ export default function HeroSection() {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* 3D Background */}
-      <div className="absolute inset-0 opacity-30 dark:opacity-50">
-        <Canvas camera={{ position: [0, 0, 5] }}>
+      {/* Enhanced 3D Background */}
+      <div className="absolute inset-0 opacity-40 sm:opacity-45 md:opacity-50 dark:opacity-55 dark:sm:opacity-60 dark:md:opacity-65">
+        <Canvas camera={{ position: [0, 0, 7], fov: 70 }}>
           <Background3D />
         </Canvas>
       </div>
@@ -78,22 +159,22 @@ export default function HeroSection() {
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-100 to-transparent dark:from-gray-900 dark:to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-6 z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="space-y-6 pl-0 lg:pl-8 mt-16 sm:mt-20 lg:mt-0"
+            className="space-y-4 sm:space-y-6 pl-0 lg:pl-8 mt-16 sm:mt-20 lg:mt-0 order-2 lg:order-1"
           >
             <motion.h1
-              className="text-5xl lg:text-7xl font-bold text-gray-800 dark:text-gray-100 text-nowrap"
+              className="text-3xl sm:text-4xl text-nowrap md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-800 dark:text-gray-100 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
             >
               Hi, I'm
               <motion.span
-                className="gradient-text text-nowrap"
+                className="gradient-text block sm:inline text-nowrap"
                 animate={{
                   backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                 }}
@@ -107,18 +188,18 @@ export default function HeroSection() {
               </motion.span>
             </motion.h1>
             <motion.div
-              className="h-16 flex items-center"
+              className="h-12 sm:h-16 flex items-center"
               key={currentText}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <h2 className="text-2xl lg:text-4xl font-semibold text-gray-600 dark:text-gray-300">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold text-gray-600 dark:text-gray-300">
                 {texts[currentText]}
               </h2>
             </motion.div>
             <motion.p
-              className="text-lg text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed"
+              className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
@@ -127,13 +208,13 @@ export default function HeroSection() {
               beautiful, functional, and user-centered applications.
             </motion.p>
             <motion.div
-              className="flex space-x-4"
+              className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
             >
               <motion.button
-                className="px-8 py-3 neumorphic-button dark:neumorphic-button-dark text-gray-700 dark:text-gray-300 font-semibold rounded-xl hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                className="px-6 sm:px-8 py-3 neumorphic-button dark:neumorphic-button-dark text-gray-700 dark:text-gray-300 font-semibold rounded-xl hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm sm:text-base"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => {
@@ -144,7 +225,7 @@ export default function HeroSection() {
                 View My Work
               </motion.button>
               <motion.button
-                className="px-8 py-3 neumorphic-pressed dark:neumorphic-pressed-dark text-blue-600 dark:text-blue-400 font-semibold rounded-xl"
+                className="px-6 sm:px-8 py-3 neumorphic-pressed dark:neumorphic-pressed-dark text-blue-600 dark:text-blue-400 font-semibold rounded-xl text-sm sm:text-base"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => {
@@ -157,76 +238,160 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* 3D Profile Image */}
+          {/* Professional image section with full rounded background */}
           <motion.div
-            className="relative flex justify-center"
+            className="relative flex justify-end lg:justify-end order-1 lg:order-2 mt-10 sm:mt-16"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            {/* Bulatan ungu glowing di luar image */}
-            <motion.div
-              className="absolute -top-8 -right-8 w-44 h-44 z-10"
-              style={{ pointerEvents: 'none' }}
-              animate={{ rotate: [0, 360] }}
-              transition={{ duration: 12, repeat: Number.POSITIVE_INFINITY, ease: 'linear' }}
-            >
-            </motion.div>
             <div className="relative">
-              {/* 3D Container with perspective */}
+              {/* Main container */}
               <motion.div
-                className="relative w-80 h-80 perspective-1000"
-                whileHover={{ rotateY: 15, rotateX: 5 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[420px] lg:h-[420px] perspective-1000"
+                whileHover={{
+                  rotateY: 6,
+                  rotateX: 3,
+                }}
+                transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 style={{ transformStyle: "preserve-3d" }}
               >
-                {/* Back layer - shadow/depth */}
+                
                 <motion.div
-                  className="absolute inset-0 w-80 h-80 rounded-full shadow-2xl bg-gradient-to-br from-blue-500/20 to-transparent blur-xl"
-                  style={{ transform: "translateZ(-50px)" }}
+                  className="absolute inset-0 w-80 h-80 sm:w-96 sm:h-96 lg:w-[400px] lg:h-[390px] bg-gradient-to-br from-gray-900 via-gray-700 to-gray-500 rounded-full shadow-2xl"
+                  style={{
+                    transform: "translateZ(-15px)",
+                  }}
                   animate={{
-                    scale: [1, 1.1, 1],
-                    rotate: [0, 180, 360],
+                    rotateZ: [0, 360],
                   }}
                   transition={{
-                    duration: 8,
+                    duration: 20,
                     repeat: Number.POSITIVE_INFINITY,
                     ease: "linear",
                   }}
                 />
-                {/* Front layer - main image dengan efek 3D */}
+
+                {/* Main profile image - head sticks out */}
                 <motion.div
-                  className="relative w-80 h-80 neumorphic-card dark:neumorphic-card-dark overflow-hidden shadow-2xl"
+                  className="relative w-full h-full overflow-visible rounded-full"
                   style={{
-                    borderRadius: "50% 50% 50% 50% / 60% 60% 40% 40%",
-                    clipPath: "ellipse(50% 60% at 50% 40%)",
-                    transform: "translateZ(0px)",
-                    boxShadow: "0 12px 40px 0 rgba(80,60,180,0.18), 0 1.5px 8px #2d3748"
+                    transform: "translateZ(20px)",
                   }}
                 >
                   <Image
-                    src="/bobby.png?height=320&width=320"
+                    src="/bobby.png?height=420&width=420"
                     alt="Profile"
-                    width={320}
-                    height={320}
-                    className="w-full h-full object-cover object-top"
-                    style={{ transform: "translateZ(10px)" }}
-                  />
-                  {/* 3D overlay effects */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-t from-blue-500/10 to-transparent"
-                    style={{ transform: "translateZ(15px)" }}
-                    animate={{
-                      opacity: [0.3, 0.6, 0.3],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Number.POSITIVE_INFINITY,
+                    width={420}
+                    height={420}
+                    className="w-full h-full object-cover object-top transition-transform duration-700 rounded-full"
+                    style={{
+                      transform: "translateZ(10px) translateY(-24px)",
                     }}
                   />
                 </motion.div>
-                {/* Floating 3D particles */}
-                
+
+                {/* Closer floating UI elements */}
+                <motion.div
+                  className="absolute -top-1 mt-7 right-9 bg-white dark:bg-gray-800 rounded-xl p-3 shadow-lg border border-gray-200 dark:border-gray-700"
+                  style={{ transform: "translateZ(35px)" }}
+                  animate={{
+                    y: [0, -5, 0],
+                    rotateZ: [0, 1, 0],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Number.POSITIVE_INFINITY,
+                    delay: 0,
+                  }}
+                >
+                  <div className="flex items-center space-x-2">
+                    <Star className="w-4 h-4 text-yellow-500" fill="currentColor" />
+                    <span className="text-xs font-semibold text-gray-700 dark:text-gray-300">5.0</span>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="absolute top-20 -right-6 bg-white dark:bg-gray-800 rounded-xl p-3 shadow-lg border border-gray-200 dark:border-gray-700"
+                  style={{ transform: "translateZ(40px)" }}
+                  animate={{
+                    x: [0, -3, 0],
+                    y: [0, 4, 0],
+                  }}
+                  transition={{
+                    duration: 5,
+                    repeat: Number.POSITIVE_INFINITY,
+                    delay: 1.5,
+                  }}
+                >
+                  <div className="flex items-center space-x-2">
+                    <Users className="w-4 h-4 text-green-500" />
+                    <span className="text-xs font-semibold text-gray-700 dark:text-gray-300">100+</span>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="absolute bottom-16 -left-4 bg-white dark:bg-gray-800 rounded-xl p-3 shadow-lg border border-gray-200 dark:border-gray-700"
+                  style={{ transform: "translateZ(32px)" }}
+                  animate={{
+                    x: [0, 5, 0],
+                    rotateZ: [0, 1.5, 0],
+                  }}
+                  transition={{
+                    duration: 4.5,
+                    repeat: Number.POSITIVE_INFINITY,
+                    delay: 2,
+                  }}
+                >
+                  <Code className="w-5 h-5 text-purple-500" />
+                </motion.div>
+
+                {/* Profile avatars cluster - closer */}
+                <motion.div
+                  className="absolute top-6 left-1 bg-white dark:bg-gray-800 rounded-xl p-2 shadow-lg border border-gray-200 dark:border-gray-700"
+                  style={{ transform: "translateZ(38px)" }}
+                  animate={{
+                    y: [0, -3, 0],
+                    x: [0, 2, 0],
+                  }}
+                  transition={{
+                    duration: 6,
+                    repeat: Number.POSITIVE_INFINITY,
+                    delay: 0.8,
+                  }}
+                >
+                  <div className="flex -space-x-2">
+                    {[1, 2, 3, 4].map((i) => (
+                      <div
+                        key={i}
+                        className={`w-6 h-6 rounded-full border-2 border-white dark:border-gray-800 ${
+                          i === 1
+                            ? "bg-blue-500"
+                            : i === 2
+                              ? "bg-green-500"
+                              : i === 3
+                                ? "bg-purple-500"
+                                : "bg-orange-500"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </motion.div>
+
+                {/* Closer floating accents */}
+                <motion.div
+                  className="absolute top-12 right-4 w-2 h-2 bg-gradient-to-r from-pink-400 to-red-500 rounded-full"
+                  style={{ transform: "translateZ(45px)" }}
+                  animate={{
+                    y: [0, -6, 0],
+                    x: [0, 3, 0],
+                  }}
+                  transition={{
+                    duration: 3.5,
+                    repeat: Number.POSITIVE_INFINITY,
+                    delay: 1,
+                  }}
+                />
               </motion.div>
             </div>
           </motion.div>

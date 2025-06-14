@@ -56,7 +56,7 @@ const experiences = [
       "Familiarity with IT asset management and helpdesk systems",
     ],
     color: "#3b82f6",
-    technologies: ["-", "-", "-", "-"],
+    technologies: [],
   },
   {
     id: 2,
@@ -72,7 +72,7 @@ const experiences = [
       "Proficiency in administrative tools (Microsoft Office, etc.)",
     ],
     color: "#8b5cf6",
-    technologies: ["-", "-", "-", "-"],
+    technologies: [],
   },
   {
     id: 3,
@@ -97,7 +97,7 @@ const experiences = [
     company: "Hacktiv8 Indonesia",
     location: "Remote",
     description:
-      "Currently working as a developer, build modern web applications.",
+      "Currently working as a developer, build modern web applications, join as student.",
     achievements: [
       "Full-cycle web development (frontend + backend)",
       "Strong understanding of API communication and data flow",

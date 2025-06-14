@@ -78,7 +78,7 @@ export default function Sidebar() {
     return (
       <>
         <motion.button
-          className="fixed top-4 left-4 z-50 p-3 neumorphic-button dark:neumorphic-button-dark rounded-xl"
+          className="fixed top-4 left-4 z-50 p-3 neumorphic-button dark:neumorphic-button-dark "
           onClick={() => setIsOpen(!isOpen)}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
