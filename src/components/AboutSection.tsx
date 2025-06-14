@@ -95,18 +95,13 @@ export default function AboutSection() {
             >
               <div className="prose prose-lg text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
                 <p>
-                  I'm a passionate Full Stack Developer with over 5 years of experience creating digital solutions that
-                  make a difference. My journey began with a curiosity for how things work, which led me to explore the
-                  fascinating world of web development.
+                  I'm Bobby Syakir, a Full Stack Web Developer with a strong background in JavaScript technologies such as React, Next.js, Node.js, and Express. I enjoy turning ideas into responsive and scalable web applications. My experience also includes working with PostgreSQL and MongoDB for robust data management. I strive to write clean, efficient, and maintainable code.
                 </p>
                 <p>
-                  I specialize in modern JavaScript frameworks, cloud technologies, and user experience design. When I'm
-                  not coding, you'll find me exploring new technologies, contributing to open-source projects, or
-                  sharing knowledge with the developer community.
+                  Over the past few years, I've built various projects — from real-time quiz games and e-commerce platforms to productivity tools and community-based apps. I love combining frontend and backend logic to create seamless user experiences. Problem-solving and innovation are at the heart of my workflow. I'm always exploring new tools and best practices to improve my craft.
                 </p>
                 <p>
-                  My approach combines technical expertise with creative problem-solving, ensuring that every project
-                  not only functions flawlessly but also provides an exceptional user experience.
+                  Outside of coding, I enjoy learning about UI/UX design, experimenting with AI tools, and working on creative tech ideas. I believe great products come from empathy, collaboration, and continuous learning. I'm open to freelance opportunities, team collaborations, or full-time roles. Let's connect and build something impactful together.
                 </p>
               </div>
             </motion.div>

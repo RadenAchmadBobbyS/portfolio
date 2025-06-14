@@ -17,7 +17,7 @@ function AnimatedSphere({ position, color }: { position: [number, number, number
           distort={0.6}
           speed={3}
           roughness={0}
-          metalness={0.8}
+          metalness={0.20}
           emissive={color}
           emissiveIntensity={0.3}
         />
@@ -86,12 +86,12 @@ export default function HeroSection() {
             className="space-y-6 pl-0 lg:pl-8 mt-16 sm:mt-20 lg:mt-0"
           >
             <motion.h1
-              className="text-5xl lg:text-7xl font-bold text-gray-800 dark:text-gray-100"
+              className="text-5xl lg:text-7xl font-bold text-gray-800 dark:text-gray-100 text-nowrap"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
             >
-              Hi, I'm{" "}
+              Hi, I'm
               <motion.span
                 className="gradient-text text-nowrap"
                 animate={{
@@ -103,7 +103,7 @@ export default function HeroSection() {
                   ease: "linear",
                 }}
               >
-                Raden Achmad
+                {" "}Raden Achmad
               </motion.span>
             </motion.h1>
             <motion.div
@@ -171,7 +171,6 @@ export default function HeroSection() {
               animate={{ rotate: [0, 360] }}
               transition={{ duration: 12, repeat: Number.POSITIVE_INFINITY, ease: 'linear' }}
             >
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-500/60 to-blue-500/40 blur-2xl shadow-2xl" />
             </motion.div>
             <div className="relative">
               {/* 3D Container with perspective */}
@@ -227,28 +226,7 @@ export default function HeroSection() {
                   />
                 </motion.div>
                 {/* Floating 3D particles */}
-                {[...Array(8)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    className="absolute w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full"
-                    style={{
-                      top: `${(20 + Math.sin(i) * 60).toFixed(2)}%`,
-                      left: `${(20 + Math.cos(i) * 60).toFixed(2)}%`,
-                      transform: `translateZ(${20 + i * 5}px)`,
-                    }}
-                    animate={{
-                      scale: [1, 1.5, 1],
-                      opacity: [0.5, 1, 0.5],
-                      y: [0, -20, 0],
-                      rotateY: [0, 360],
-                    }}
-                    transition={{
-                      duration: 2 + i * 0.5,
-                      repeat: Number.POSITIVE_INFINITY,
-                      delay: i * 0.3,
-                    }}
-                  />
-                ))}
+                
               </motion.div>
             </div>
           </motion.div>
@@ -271,7 +249,6 @@ export default function HeroSection() {
               ease: "easeInOut",
             }}
           >
-            <span className="text-sm font-medium">Scroll Down</span>
             <ChevronDown size={24} />
           </motion.button>
         </motion.div>
