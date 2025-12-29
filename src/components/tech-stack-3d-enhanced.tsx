@@ -174,10 +174,11 @@ function FloatingTechCard({ tech, index, total }: FloatingTechCardProps) {
         />
 
         {/* Icon */}
-        <Image
+        <img
           src={tech.url || "/placeholder.svg"}
           alt={tech.name}
           className="w-full h-full object-contain relative z-10"
+          loading="lazy"
         />
 
       </motion.div>
