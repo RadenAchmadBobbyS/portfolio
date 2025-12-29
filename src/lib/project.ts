@@ -49,4 +49,25 @@ export const projects: Project[] = [
       'Developed the frontend of a live quiz application with real-time rooms, questions, timers, scores, and leaderboards. Integrated Socket.IO for synchronized gameplay and dynamic ranking updates.',    
     imageUrl: '/images/quizez-4.png',
   },
+  {
+    projectName: 'Sedot Wc - On-Demand Septic Service',
+    techStack: 'Next.js • TypeScript • Node.js • Tailwind CSS',
+    description:
+      'A full-stack developer for an on-demand septic tank service platform. Built responsive UI components, integrated third-party services, and optimized performance for seamless user experiences.',    
+    imageUrl: '/images/image copy.png',
+  },
+  {
+    projectName: 'Recomend Food App - Foodie Finder',
+    techStack: 'PHP • Laravel • MySQL • Bootstrap',
+    description:
+      ' A web application that recommends food options based on user preferences and location. Developed backend logic, database schemas, and user-friendly interfaces to enhance the dining experience.',    
+    imageUrl: '/images/recomendasi.png',
+  },
+  {
+    projectName: 'My Portfolio Website',
+    techStack: 'Next.js • TypeScript • Tailwind CSS • Framer Motion • Three.js',
+    description:
+      'A personal portfolio website showcasing my projects, skills, and experience. Implemented interactive UI elements, smooth animations, and 3D graphics to create an engaging user experience.',    
+    imageUrl: '/images/image.png',
+  },
 ];

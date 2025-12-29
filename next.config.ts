@@ -59,6 +59,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "www.peanutsquare.com", // Added this domain
       },
+      {
+        protocol: "https",
+        hostname: "cdn.simpleicons.org",
+      },
     ],
   },
 };

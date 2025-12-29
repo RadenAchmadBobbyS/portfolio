@@ -1,5 +1,5 @@
 "use client"
-
+import Image from 'next/image';
 import { motion } from "framer-motion"
 
 const TECH_LOGOS = [
@@ -47,11 +47,24 @@ export default function TechStackIcons() {
           className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center glass-morphism rounded-xl p-3 cursor-pointer group"
           title={tech.name}
         >
-          <img
-            src={tech.url || "/placeholder.svg"}
-            alt={tech.name}
-            className="w-full h-full object-contain transition-all"
-          />
+          {tech.url?.startsWith("https://cdn.simpleicons.org/") ? (
+            <Image
+              src={tech.url}
+              alt={tech.name}
+              width={40}
+              height={40}
+              className="w-full h-full object-contain transition-all"
+              loading="lazy"
+            />
+          ) : (
+            <Image
+              src={tech.url || "/placeholder.svg"}
+              alt={tech.name}
+              width={40}
+              height={40}
+              className="w-full h-full object-contain transition-all"
+            />
+          )}
         </motion.div>
       ))}
     </div>
