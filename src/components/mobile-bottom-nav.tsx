@@ -26,13 +26,13 @@ export default function MobileBottomNav() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="rounded-full hover:bg-primary/20 hover:text-primary transition-colors relative group"
+                className="rounded-full hover:bg-foreground/20 hover:text-foreground transition-colors relative group"
               >
                 <item.icon className="w-5 h-5" />
                 <span className="sr-only">{item.name}</span>
 
                 {/* Tooltip on hover */}
-                <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-primary/90 text-primary-foreground text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-mono">
+                <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-foreground/90 text-foreground-foreground text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-mono">
                   {item.name}
                 </span>
               </Button>

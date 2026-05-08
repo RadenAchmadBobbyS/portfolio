@@ -19,15 +19,6 @@ export default function KineticHero() {
       ref={containerRef}
       className="relative min-h-[100vh] flex flex-col items-center justify-center overflow-hidden mt-20 px-2 sm:px-4 md:px-8"
     >
-      {/* Animated gradient orbs */}
-      <motion.div
-        className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-glow"
-        style={{ y }}
-      />
-      <motion.div
-        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-glow"
-        style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]) }}
-      />
 
       <motion.div className="relative z-10 space-y-8 mt-10 sm:space-y-10 md:space-y-12 max-w-7xl mx-auto px-2 sm:px-6 text-center w-full">
         <motion.div
@@ -36,8 +27,8 @@ export default function KineticHero() {
           transition={{ duration: 0.6 }}
           className="inline-block"
         >
-          <div className="px-5 py-2.5 text-nowrap text-xs rounded-full glass-morphism text-primary font-mono inline-flex items-center gap-2 border border-primary/30">
-            <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse shadow-[0_0_10px_var(--primary)]" />
+          <div className="px-5 py-2.5 text-nowrap text-xs rounded-full glass-morphism text-foreground font-mono inline-flex items-center gap-2 border border-foreground/30">
+            <span className="w-2.5 h-2.5 rounded-full bg-foreground animate-pulse shadow-[0_0_10px_var(--foreground)]" />
             Full Stack Developer {"/"} Software Engineer
           </div>
         </motion.div>
@@ -50,7 +41,7 @@ export default function KineticHero() {
             className="text-6xl sm:text-5xl md:text-8xl lg:text-[10rem] font-black tracking-tight sm:tracking-tighter leading-[1.1] sm:leading-[0.9] text-balance break-words"
           >
             <motion.span
-              className="inline-block bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent animate-gradient"
+              className="inline-block bg-gradient-to-r from-foreground via-foreground to-foreground bg-clip-text text-transparent animate-gradient"
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -59,22 +50,12 @@ export default function KineticHero() {
             </motion.span>
             <br />
             <motion.span
-              className="inline-block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient italic"
+              className="inline-block bg-gradient-to-r from-foreground via-foreground to-foreground bg-clip-text text-transparent animate-gradient italic"
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               I{"'"}m Bobby{' '}
-            </motion.span>
-            <br />
-            <motion.span
-              className="inline-block bg-gradient-to-r text-3xl sm:text-4xl md:text-6xl lg:text-[5rem] tracking-normal from-foreground via-primary to-foreground bg-clip-text text-transparent animate-gradient"
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-            >
-              Lets Build Impactful 
-              <p className="text-4xl sm:text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-extrabold font-mono">Products{','}Together</p>
             </motion.span>
           </motion.h1>
         </div>
@@ -91,14 +72,14 @@ export default function KineticHero() {
 
         {/* CTA buttons */}
           <div className="flex flex-wrap gap-4 justify-center">
-            <Button variant="link" size="sm" className="gap-2 z-10" asChild>
+            <Button variant="link" size="sm" className="gap-2 z-10 text-foreground" asChild>
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=bobbysyakir18@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full z-10 glass bg-transparent border border-border p-2 flex items-center justify-center hover:bg-primary/10 transition-colors"
+                className="rounded-full z-10 glass bg-transparent border border-border p-2 flex items-center justify-center hover:bg-foreground/10 transition-colors"
               >
-                <MailQuestion className="w-4 h-4" /> Email
+                <MailQuestion className="w-4 h-4 text-foreground" /> Email
               </a>
             </Button>
             <div className="flex gap-2 z-10 flex-wrap">
@@ -107,7 +88,7 @@ export default function KineticHero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="rounded-full glass bg-transparent border border-border p-2 flex items-center justify-center hover:bg-primary/10 transition-colors"
+                className="rounded-full glass bg-transparent border border-border p-2 flex items-center justify-center hover:bg-foreground/10 transition-colors"
               >
                 <Github className="w-5 h-5" />
               </a>
@@ -116,7 +97,7 @@ export default function KineticHero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="rounded-full glass bg-transparent border border-border p-2 flex items-center justify-center hover:bg-primary/10 transition-colors"
+                className="rounded-full glass bg-transparent border border-border p-2 flex items-center justify-center hover:bg-foreground/10 transition-colors"
               >
                 <Linkedin className="w-5 h-5" />
               </a>

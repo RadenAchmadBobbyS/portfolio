@@ -22,8 +22,8 @@ export default function InteractiveProjects() {
           className="space-y-4"
         >
           <div className="flex items-center gap-4">
-            <div className="h-[1px] w-16 bg-gradient-to-r from-transparent to-primary" />
-            <span className="text-sm font-mono text-primary uppercase tracking-widest">Featured Work</span>
+            <div className="h-[1px] w-16 bg-gradient-to-r from-transparent to-foreground" />
+            <span className="text-sm font-mono text-foreground uppercase tracking-widest">Featured Work</span>
           </div>
           <h2 className="text-5xl md:text-7xl font-bold tracking-tight">Selected Projects</h2>
           <p className="text-xl text-muted-foreground max-w-2xl">
@@ -76,6 +76,8 @@ export default function InteractiveProjects() {
               <Image
                 src={selectedImage}
                 alt="Project preview"
+                width={800}
+                height={600}
                 className="w-full h-full max-w-[95vw] max-h-[95vh] object-contain rounded-xl shadow-2xl"
                 style={{ cursor: 'default' }}
               />
@@ -185,6 +187,8 @@ function ProjectCard({ project, index, onImageClick }: ProjectCardProps) {
           <Image
             src={project.imageUrl || "/placeholder.svg"}
             alt={project.projectName}
+            width={600}
+            height={400}
             className="w-full h-full object-cover pointer-events-none"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent pointer-events-none" />
@@ -203,7 +207,7 @@ function ProjectCard({ project, index, onImageClick }: ProjectCardProps) {
 
         {/* Hover overlay with glow */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 opacity-0 pointer-events-none"
+          className="absolute inset-0 bg-gradient-to-br from-foreground/20 via-transparent to-foreground/20 opacity-0 pointer-events-none"
           animate={{ opacity: isHovered ? 1 : 0 }}
           transition={{ duration: 0.4 }}
         />
@@ -225,14 +229,14 @@ function ProjectCard({ project, index, onImageClick }: ProjectCardProps) {
               transition={{ delay: 0.2 }}
               className="inline-block"
             >
-              <div className="px-3 py-1 rounded-full border border-primary/30 text-xs font-mono backdrop-blur-xl">
+              <div className="px-3 py-1 rounded-full border border-foreground/30 text-xs font-mono backdrop-blur-xl">
                 {project.techStack}
               </div>
             </motion.div>
 
             {/* Project title */}
             <div className="flex justify-between items-start gap-4">
-              <h3 className="text-2xl md:text-3xl font-bold group-hover:text-primary transition-colors">
+              <h3 className="text-2xl md:text-3xl font-bold group-hover:text-foreground transition-colors">
                 {project.projectName}
               </h3>
               <motion.div
@@ -242,7 +246,7 @@ function ProjectCard({ project, index, onImageClick }: ProjectCardProps) {
                 }}
                 className="flex-shrink-0 w-10 h-10 rounded-full glass-morphism flex items-center justify-center"
               >
-                <ExternalLink className="w-5 h-5 text-primary" />
+                <ExternalLink className="w-5 h-5 text-foreground" />
               </motion.div>
             </div>
 
@@ -263,14 +267,14 @@ function ProjectCard({ project, index, onImageClick }: ProjectCardProps) {
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: isHovered ? "100%" : "0%" }}
-              className="h-[1px] bg-gradient-to-r from-primary via-accent to-transparent"
+              className="h-[1px] bg-gradient-to-r from-foreground via-foreground to-transparent"
             />
           </motion.div>
         </div>
 
-        {/* Corner accent */}
+        {/* Corner foreground */}
         <motion.div className="absolute top-0 right-0 w-32 h-32 opacity-0 pointer-events-none" animate={{ opacity: isHovered ? 0.3 : 0 }}>
-          <div className="absolute inset-0 bg-gradient-to-br from-primary to-transparent blur-2xl" />
+          <div className="absolute inset-0 bg-gradient-to-br from-foreground to-transparent blur-2xl" />
         </motion.div>
       </Card>
     </motion.div>

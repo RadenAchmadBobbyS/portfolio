@@ -22,7 +22,7 @@ export default function AnimatedAbout() {
     <section ref={containerRef} id="about" className="relative mt-20 px-6 max-w-7xl mx-auto">
       {/* Decorative line */}
       <motion.div
-        className="absolute left-0 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-primary to-transparent"
+        className="absolute left-0 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-foreground to-transparent"
         initial={{ scaleY: 0 }}
         whileInView={{ scaleY: 1 }}
         viewport={{ once: true }}
@@ -39,11 +39,11 @@ export default function AnimatedAbout() {
             transition={{ duration: 0.8 }}
             className="space-y-2"
           >
-            <div className="text-sm font-mono text-primary uppercase tracking-widest">{"//"} About Me</div>
+            <div className="text-sm font-mono text-foreground uppercase tracking-widest">{"//"} About Me</div>
             <h2 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight">
               Crafting Digital
               <br />
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Experiences</span>
+              <span className="bg-gradient-to-r from-foreground to-foreground bg-clip-text text-transparent">Experiences</span>
             </h2>
           </motion.div>
 
@@ -59,7 +59,7 @@ export default function AnimatedAbout() {
               { value: "100%", label: "Passion" },
             ].map((stat, i) => (
               <div key={i} className="space-y-1">
-                <div className="text-3xl md:text-4xl font-bold text-primary">{stat.value}</div>
+                <div className="text-3xl md:text-4xl font-bold text-foreground">{stat.value}</div>
                 <div className="text-sm text-muted-foreground font-mono">{stat.label}</div>
               </div>
             ))}

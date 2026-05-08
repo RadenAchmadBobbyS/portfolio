@@ -22,10 +22,10 @@ export default function PortfolioPage() {
           className="max-w-7xl mx-auto flex justify-between items-center glass-morphism rounded-full px-8 py-5 border-border/50 shadow-2xl"
         >
           <motion.span
-            className="font-black text-2xl tracking-tighter bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+            className="font-black text-2xl tracking-tighter bg-gradient-to-r from-foreground to-foreground bg-clip-text text-transparent"
             whileHover={{ scale: 1.05 }}
           >
-            BOBBY.DEV
+            R.A.B.S
           </motion.span>
 
           {/* Desktop Nav */}
@@ -34,17 +34,23 @@ export default function PortfolioPage() {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="hover:text-primary transition-all relative group"
+                className="hover:text-foreground transition-all relative group"
               >
                 {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-foreground transition-all group-hover:w-full" />
               </a>
             ))}
           </div>
 
           <div className="flex items-center gap-4">
-            <Button size="sm" className="hidden md:flex rounded-full bg-primary hover:bg-primary/90 font-bold px-6">
-              RESUME
+            <Button
+              size="sm"
+              className="hidden md:flex rounded-full bg-foreground hover:bg-foreground/90 font-bold px-6"
+              asChild
+            >
+              <a href="/resume.pdf" download>
+                RESUME
+              </a>
             </Button>
           </div>
         </motion.div>
@@ -60,6 +66,28 @@ export default function PortfolioPage() {
 
       <InteractiveProjects />
 
+      <section className="relative py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="rounded-3xl border border-border/30 glass-morphism p-8 md:p-12 text-center space-y-5"
+          >
+            <p className="font-mono text-xs md:text-sm uppercase tracking-[0.22em] text-foreground/70">Open For Collaboration</p>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Saya terbuka untuk project apa pun</h2>
+            <p className="max-w-2xl mx-auto text-sm md:text-base text-muted-foreground leading-relaxed">
+              Dari landing page, dashboard, company profile, hingga pengembangan fitur baru pada produk existing,
+              saya siap bantu dari tahap ide sampai production.
+            </p>
+            <Button asChild className="rounded-full px-7 font-bold">
+              <a href="mailto:bobbysyakir18@gmail.com">Diskusikan Project</a>
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
       <footer id="contact" className="relative py-10 mt-10 border-t border-border/20">
         <div className="max-w-7xl mx-auto space-y-16">
           {/* CTA Section */}
@@ -71,15 +99,15 @@ export default function PortfolioPage() {
             className="text-center space-y-8"
           >
             <div className="space-y-4">
-              <p className="text-sm font-mono text-primary uppercase tracking-widest">Ready to start a project?</p>
+              <p className="text-sm font-mono text-foreground uppercase tracking-widest">Ready to start a project?</p>
               <h2 className="text-5xl md:text-7xl font-bold tracking-tight">
-                <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient">
+                <span className="bg-gradient-to-r from-foreground via-foreground to-foreground bg-clip-text text-transparent animate-gradient">
                   Let{"'"}s Create Together
                 </span>
               </h2>
               <motion.a
                 href="mailto:hello@developer.dev"
-                className="inline-block text-2xl md:text-4xl font-medium hover:text-primary transition-colors"
+                className="inline-block text-2xl md:text-4xl font-medium hover:text-foreground transition-colors"
                 whileHover={{ scale: 1.05 }}
               >
                 bobbysyakir18@gmail.com
@@ -88,7 +116,7 @@ export default function PortfolioPage() {
 
             {/* Social links */}
             <div className="flex gap-4 justify-center">
-            <Button variant="link" size="sm" className="gap-2" asChild>
+            <Button variant="link" size="sm" className="gap-2 text-foreground" asChild>
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=bobbysyakir18@gmail.com"
                 target="_blank"
@@ -97,7 +125,7 @@ export default function PortfolioPage() {
                 <Mail className="w-4 h-4" /> Email
               </a>
             </Button>
-            <Button variant="link" size="sm" className="gap-2" asChild>
+            <Button variant="link" size="sm" className="gap-2 text-foreground" asChild>
               <a
                 href="https://www.linkedin.com/in/bobby-syakir-80a957150/"
                 target="_blank"
@@ -106,7 +134,7 @@ export default function PortfolioPage() {
                 <Linkedin className="w-4 h-4" /> LinkedIn
               </a>
             </Button>
-            <Button variant="link" size="sm" className="gap-2" asChild>
+            <Button variant="link" size="sm" className="gap-2 text-foreground" asChild>
               <a
                 href="https://github.com/RadenAchmadBobbyS"
                 target="_blank"
@@ -128,10 +156,10 @@ export default function PortfolioPage() {
           >
             <span>© 2025 BOBBY.DEV. All rights reserved.</span>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="#" className="hover:text-foreground transition-colors">
                 Privacy
               </a>
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="#" className="hover:text-foreground transition-colors">
                 Terms
               </a>
             </div>

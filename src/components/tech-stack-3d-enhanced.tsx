@@ -29,11 +29,11 @@ export default function TechStack3DEnhanced() {
           className="lg:col-span-1 space-y-6 text-center lg:text-left"
         >
           <div className="space-y-2">
-            <div className="text-xs sm:text-sm font-mono text-primary uppercase tracking-widest">{"//"} Core Tech Stack</div>
+            <div className="text-xs sm:text-sm font-mono text-foreground uppercase tracking-widest">{"//"} Core Tech Stack</div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight">
               Mastering the{" "}
               <br className="hidden sm:block" />
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">modern web</span>
+              <span className="bg-gradient-to-r from-foreground to-foreground bg-clip-text text-transparent">modern web</span>
             </h2>
           </div>
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
@@ -48,7 +48,7 @@ export default function TechStack3DEnhanced() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex items-baseline gap-2 justify-center lg:justify-start"
           >
-            <span className="text-4xl sm:text-5xl font-bold text-primary">{TECH_STACK.length}+</span>
+            <span className="text-4xl sm:text-5xl font-bold text-foreground">{TECH_STACK.length}+</span>
             <span className="text-xs sm:text-sm text-muted-foreground font-mono">Technologies</span>
           </motion.div>
         </motion.div>

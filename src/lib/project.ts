@@ -8,6 +8,41 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    projectName: 'Astra Toyota 3D Showcase Platform',
+    techStack: 'Three.js • Next.js • TypeScript • Backend API • Responsive UI • i18n • TTS Audio',
+    description:
+      'A responsive 3D product showcase for Astra Toyota featuring dynamic model data from the backend, interactive 2-wheel and 4-wheel vehicle views, multilingual content in three languages, and text-to-speech audio playback for detailed part descriptions.',
+    imageUrl: '/images/3d.png',
+  },
+  {
+    projectName: 'Ragdalion Design System & Component Library',
+    techStack: 'Next.js • TypeScript • CLI • Design System • Documentation • Reusable Components',
+    description:
+      'A scalable design system and component library for Ragdalion, equipped with a CLI for installation and setup, alongside a polished documentation site with examples, usage guides, and code snippets similar to shadcn.',
+    imageUrl: '/images/library.png',
+  },
+  {
+    projectName: 'Fleet Management Dashboard',
+    techStack: 'React • TypeScript • Fleet Management • Analytics • AI Predictive • Responsive Web App',
+    description:
+      'A modern fleet management dashboard with AI-powered predictive insights, designed to support operational planning, monitoring, and decision-making across transportation and asset-intensive environments.',
+    imageUrl: '/images/fleet.png',
+  },
+  {
+    projectName: 'Maintenance Product Dashboard',
+    techStack: 'React • TypeScript • Maintenance Management • Analytics • AI Predictive • Responsive Web App',
+    description:
+      'A maintenance-focused product dashboard built to track service workflows, operational performance, and predictive maintenance signals in a single responsive interface.',
+    imageUrl: '/images/maintenance.png',
+  },
+  {
+    projectName: 'AI All-in-One Solution Platform',
+    techStack: 'AI Integration • OCR • CCTV Analytics • Three.js • Map Overview • Interactive UI',
+    description:
+      'An all-in-one AI platform that integrates OCR, CCTV intelligence, interactive 3D machine visualization, and an overview map experience to centralize operational data in a single interface.',
+    imageUrl: '/images/ai all in one.png',
+  },
+  {
     projectName: 'MyBooks Library App',
     techStack: 'React • TypeScript • Node.js • PostgreSQL • Sequelize • Socket.IO • Redis • Zustand',
     description:

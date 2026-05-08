@@ -25,37 +25,37 @@ export default function ErrorBackground() {
   >([])
 
   useEffect(() => {
-    const cols = Array.from({ length: 60 }).map((_, i) => ({
+    const nextColumns = Array.from({ length: 18 }).map((_, i) => ({
       id: i,
-      delay: Math.random() * 20,
-      left: (i / 60) * 100 + (Math.random() * 2 - 1),
-      speed: 10 + Math.random() * 30,
-      fontSize: 7 + Math.random() * 11,
-      errors: Array.from({ length: 25 }).map(() => Math.floor(Math.random() * ERROR_CODES.length)),
+      delay: Math.random() * 8,
+      left: (i / 18) * 100 + (Math.random() * 1.5 - 0.75),
+      speed: 20 + Math.random() * 25,
+      fontSize: 8 + Math.random() * 6,
+      errors: Array.from({ length: 12 }).map(() => Math.floor(Math.random() * ERROR_CODES.length)),
     }))
-    setColumns(cols)
+
+    setColumns(nextColumns)
   }, [])
 
   return (
     <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden select-none bg-background/50">
-      <div className="absolute inset-0 bg-radial-[at_center] from-transparent via-background/40 to-background z-10" />
+      <div className="absolute inset-0 bg-radial-[at_center] from-transparent via-background/45 to-background z-10" />
 
       {columns.map((col) => (
         <div
           key={col.id}
-          className="absolute top-[-20%] font-mono whitespace-nowrap opacity-0 animate-fade-in"
+          className="error-column absolute top-[-20%] font-mono whitespace-nowrap opacity-0 animate-fade-in"
           style={{
             left: `${col.left}%`,
             fontSize: `${col.fontSize}px`,
             animation: `fall ${col.speed}s linear infinite, fade-in 1s ease-out forwards`,
             animationDelay: `-${col.delay}s, 0s`,
-            filter: col.fontSize < 10 ? "blur(0.5px)" : "none", // Added subtle depth of field
           }}
         >
           {col.errors.map((errorIdx, i) => {
             const error = ERROR_CODES[errorIdx]
             return (
-              <div key={i} className={`py-4 transition-colors duration-1000 ${error.color} hover:text-foreground/30`}>
+              <div key={i} className={`py-3 ${error.color}`}>
                 {error.text}
               </div>
             )
@@ -70,6 +70,21 @@ export default function ErrorBackground() {
         @keyframes fade-in {
           from { opacity: 0; }
           to { opacity: 1; }
+        }
+        @media (max-width: 768px) {
+          .error-column:nth-child(n + 9) {
+            display: none;
+          }
+          .error-column {
+            animation-duration: 42s !important;
+            opacity: 0.55 !important;
+          }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .error-column {
+            animation: none !important;
+            opacity: 0.22 !important;
+          }
         }
       `}</style>
     </div>
